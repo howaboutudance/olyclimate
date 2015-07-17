@@ -2,6 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.2'
 
+#testing
+group :test do
+	gem 'minitest-reporters'
+	gem 'mini_backtrace'
+	gem 'guard-minitest'
+	gem 'guard'
+end
+
 ### OpenShift Online changes:
 
 # Fix the conflict with the system 'rake':
@@ -64,6 +72,6 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]
 #
 # for asset pipieline
