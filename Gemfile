@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.2'
 
 ### OpenShift Online changes:
 
@@ -23,9 +23,9 @@ group :development, :test do
 end
 
 # Add support for the MySQL
-group :production, :mysql do
-  gem 'mysql2'
-end
+#group :production, :mysql do
+#  gem 'mysql2'
+#end
 
 group :production, :postgresql do
   gem 'pg'
@@ -65,4 +65,5 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+#
+# for asset pipieline
