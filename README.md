@@ -147,3 +147,7 @@ License
 -------
 
 This code is dedicated to the public domain to the maximum extent permitted by applicable law, pursuant to CC0 (http://creativecommons.org/publicdomain/zero/1.0/)
+=======
+The OpenShift `ruby` cartridge documentation can be found at:
+
+http://openshift.github.io/documentation/oo_cartridge_guide.html#ruby
