@@ -29,6 +29,9 @@ group :development do
 	gem 'webconsole'
 end
 
+#explictely adding ansi to make sure it work
+#
+gem 'ansi'
 ### OpenShift Online changes:
 
 # important to keep in mind
