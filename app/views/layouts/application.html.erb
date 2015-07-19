@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<%= render "layouts/header" %>
+	<article class="container">
+		<h1 class="top_header"> Olympic Climate Action</h1>
+		<%= yield %>
+	</article>
+	<%= render 'layouts/footer' %>
 
 </body>
 </html>
