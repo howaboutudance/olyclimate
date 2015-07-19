@@ -31,8 +31,8 @@ end
 
 ### OpenShift Online changes:
 
-
-# $ rhc env set BUNDLE_WITHOUT="development test postgresql"
+# important to keep in mind
+# $ rhc env set BUNDLE_WITHOUT="development test"
 
 group :production, :postgresql do
   gem 'pg'
