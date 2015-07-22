@@ -24,6 +24,12 @@ class UserTest < ActiveSupport::TestCase
 		@user.news = nil
 		assert_not @user.valid?, "news is nil thus invalid"
 	end
+	test "checkbox can be false but not nil" do
+		@user.news = false 
+		@user.alerts = false
+		@user.discuss = false
+		assert @user.valid?
+	end
 	test "email should reject valid addresses" do
 		invalid_addresses = %w[user@example,com user_at_foo.org user.name@example. 
 													foo@bar_baz.com foo#skitles.ninja info@house,church

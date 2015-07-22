@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, length: { maximum: 255 },
 							uniqueness: { case_sensitive: false }
 	validates_format_of :email,  with: VALID_EMAIL_REGEX 
-	validates :discuss, presence: true
-	validates :alerts, presence: true
-	validates :news, presence: true
+	validates :discuss, inclusion: { in: [true, false]}
+	validates :alerts, inclusion: { in: [true, false]}
+	validates :news, inclusion: { in: [true, false]}
 end
