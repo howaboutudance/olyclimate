@@ -1,2 +1,23 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Subscribe') %>
+
+<h1>Subscribe</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@user) do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email %> <br />
+			
+			<%= f.label "Alerts list" %>
+			<%= f.check_box :alerts %>
+			<p> a list for most recent annoucements related to olyclimate's concerns</p>
+			<%= f.label "News list" %>
+			<%= f.check_box :news %>
+			<p> a list for news items that are of olyclimate's concern or interest</p>
+			<%= f.label "Discussion List" %>
+			<%= f.check_box :discuss %>
+			<p> a list for discussion of olyclimate-related topics</p>
+			<%= f.submit "Subscribe", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div> 
