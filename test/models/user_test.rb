@@ -25,11 +25,29 @@ class UserTest < ActiveSupport::TestCase
 		assert_not @user.valid?, "news is nil thus invalid"
 	end
 	test "email should reject valid addresses" do
-		invalid_addresses = %w[user_at_foo.org user.name@example. 
-													foo@bar_baz.com foo#skitles.ninja info@house,church]
+		invalid_addresses = %w[user@example,com user_at_foo.org user.name@example. 
+													foo@bar_baz.com foo#skitles.ninja info@house,church
+													user@evergreen..edu]
 		invalid_addresses.each do |invalid_address|
 			@user.email = invalid_address
 			assert_not @user.valid?, "#{invalid_address} should be invalid"
 		end
+	end
+	test "email should be unique" do
+		dup_user = @user.dup
+		@user.save
+		assert_not dup_user.valid?, "duplicae is invalid"
+	end
+	test "email should be unique & insenstive" do
+		dup_user = @user.dup
+		dup_user.email = @user.email.upcase
+		@user.save
+		assert_not dup_user.valid?, " case insenstive duplicate is invalid"
+	end
+	test "email addresses should be saved as lower-case" do
+		mixed_case_email = "Foo@alumni.EvErGREEN.eDu"
+		@user.email = mixed_case_email
+		@user.save
+		assert_equal mixed_case_email.downcase, @user.reload.email
 	end
 end
