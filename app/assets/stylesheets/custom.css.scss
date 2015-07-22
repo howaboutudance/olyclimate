@@ -11,11 +11,32 @@ section {
 textarea {
 	resize: vertical;
 }
-
+/* mixins */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 /* some simple helper shorthand formatting */
 .center{
 	text-align: center;
 }
 .top_header h1 {
 	margin-bottom: 10px;
+}
+
+/* forms */
+
+input[type="email"], input[type="text"], input[type="password"], textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+	@include box_sizing;
+}
+
+input [type="checkbox"] {
+	margin-right:10px !important;
+}
+input {
+	height: auto !important;
 }
