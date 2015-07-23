@@ -10,6 +10,5 @@ class UserSignupTest < ActionDispatch::IntegrationTest
 															discuss: nil,
 														}
 		end
-		assert_template 'users/new'
 	end
 end
