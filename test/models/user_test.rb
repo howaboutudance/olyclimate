@@ -2,11 +2,11 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 	def setup
-		@user = User.new(email:"user@example.com", discuss: true, alerts: true, news: true)
+		@user = User.new(email:"user1@example.com", discuss: true, alerts: true, news: true)
 	end
 	
 	test "should be valid" do
-		assert @user.valid?
+		assert @user.valid?, @user.errors.messages
 	end 
 	test "email should not be blank" do
 		@user.email = "   "
@@ -26,8 +26,10 @@ class UserTest < ActiveSupport::TestCase
 	end
 	test "checkbox can be false but not nil" do
 		@user.news = false 
+		assert @user.valid?, @user.errors.messages 
+	end
+	test "alerts can be false but not nil" do
 		@user.alerts = false
-		@user.discuss = false
 		assert @user.valid?
 	end
 	test "email should reject valid addresses" do

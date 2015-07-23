@@ -1,1 +1,6 @@
 #
+one: 
+  email: user@example.com
+  discuss: 0
+  alerts: 1
+  news: 1
