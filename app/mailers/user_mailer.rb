@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def subscribe
     @greeting = "Hi"
 
-    mail to: "mpenhall@gmail.com"
+    mail to: "to@example.org"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,6 +19,6 @@ class UserMailer < ApplicationMailer
   def account_link
     @greeting = "Hi"
 
-    mail to: "mpenhall@gmail.com"
+    mail to: "to@example.org"
   end
 end
