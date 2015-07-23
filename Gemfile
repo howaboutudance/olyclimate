@@ -29,7 +29,7 @@ end
 
 #explictely adding ansi to make sure it work
 #
-gem 'ansi'
+gem 'ansi', '~> 1.5.0'
 ### OpenShift Online changes:
 
 # important to keep in mind
