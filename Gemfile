@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.2'
+gem 'rails', '~> 4.0'
+gem 'rack' , '1.5.2'
 gem 'bootstrap-sass'
 #make sure is ~> 0.9.6 for openshift
 gem 'rake', '~> 0.9.6'
@@ -28,7 +29,7 @@ end
 
 #explictely adding ansi to make sure it work
 #
-gem 'ansi'
+gem 'ansi', '~> 1.5.0'
 ### OpenShift Online changes:
 
 # important to keep in mind
