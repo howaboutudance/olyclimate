@@ -5,10 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.subscribe.subject
   #
-  def subscribe
+  def subscribe(user)
+		@user = user
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail from: @user.email, to: 'mpenhall@gmail.com', subject: 'Subscribe'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

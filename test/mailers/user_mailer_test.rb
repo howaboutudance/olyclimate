@@ -2,10 +2,8 @@ require 'test_helper'
 
 class UserMailerTest < ActionMailer::TestCase
   test "subscribe" do
-    mail = UserMailer.subscribe
+    mail = UserMailer.subscribe(User.first)
     assert_equal "Subscribe", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
     assert_match "Hi", mail.body.encoded
   end
 
