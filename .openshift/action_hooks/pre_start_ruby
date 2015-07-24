@@ -25,3 +25,4 @@ if ! [ "$(type -t set_env_var)" == "function" ]; then
     export RAILS_DB="mysql"
   fi
 fi
+source ~/app-root/data/.bash_profile
