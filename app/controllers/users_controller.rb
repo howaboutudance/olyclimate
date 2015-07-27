@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-	ALERTS_ADDRESS = "olyclimate-alerts@lists.riseup.net"
-	NEWS_ADDRESS = "olyclimate-news@lists.riseup.net"
-	DISCUSS_ADDRESS = "olyclimate-discuss@lists.riseup.net"
+	ALERTS_ADDRESS = "olyclimate-alerts-subscribe@lists.riseup.net"
+	NEWS_ADDRESS = "olyclimate-news-subscribe@lists.riseup.net"
+	DISCUSS_ADDRESS = "olyclimate-discuss-subscribe@lists.riseup.net"
 
 	def show
 		@user = User.find(params[:id])
@@ -15,17 +15,17 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			if @user.discuss 
-				UserMailer.subscribe(@user, DISCUSS_ADDRESS).deliver_now
+				UserMailer.subscribe(@user, DISCUSS_ADDRESS).deliver
 			end
 			if @user.news
-				UserMailer.subscribe(@user, DISCUSS_ADDRESS).deliver_now
+				UserMailer.subscribe(@user, NEWS_ADDRESS).deliver
 			end
 			if @user.alerts
-				UserMailer.subscribe(@user, DISCUSS_ADDRESS).deliver_now
+				UserMailer.subscribe(@user, ALERTS_ADDRESS).deliver
 			end
 			redirect_to root_url
 		else
-			render 'static_pages/new'
+			render 'static_pages/error'
 		end
 	end
 

@@ -1,3 +1,7 @@
+MAIL_HOSTNAME= ENV['MAILGUN_HOSTNAME']
+MAIL_DOMAIN = ENV['MAILGUN_DOMAIN']
+MAIL_USERNAME = ENV['MAILGUN_USERNAME']
+MAIL_PASSWORD = ENV['MAILGUN_PASSWORD']
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -14,7 +18,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -37,7 +41,14 @@ Rails.application.configure do
   #
   # mailer settings
   config.action_mailer.raise_delivery_errors = true
-	config.action_mailer.delivery_method = :test
+	config.action_mailer.delivery_method = :smtp
+	config.action_mailer.smtp_settings = {
+		:authentication => :plain,
+		:address => MAIL_HOSTNAME,
+		:port => 587,
+		:user_name => MAIL_USERNAME,
+		:password => MAIL_PASSWORD
+	}
 	host = 'localhost:3000'
 	config.action_mailer.default_url_options = { host: host}
 end
