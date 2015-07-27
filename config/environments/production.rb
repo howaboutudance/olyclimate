@@ -1,3 +1,7 @@
+MAIL_HOSTNAME= ENV['MAILGUN_HOSTNAME']
+MAIL_DOMAIN = ENV['MAILGUN_DOMAIN']
+MAIL_USERNAME = ENV['MAILGUN_USERNAME']
+MAIL_PASSWORD = ENV['MAILGUN_PASSWORD']
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
