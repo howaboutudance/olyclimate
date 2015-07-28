@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 	get 'login' => 'sessions#new'
 	post 'login' => 'sessions#create'
 	delete 'logout' => 'sessions#destroy'
+	
+	#oauth2
+	get 'oauth2callback', to: 'sessions#create'
+	get 'oauthfailure' , to: redirect('login')
+
 
   # resources
 	resources :users
