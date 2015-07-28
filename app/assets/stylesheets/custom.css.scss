@@ -3,7 +3,10 @@
 
 /* universal */
 body {
-	padding-top: 60px
+	padding-top: 60px;
+	.row {
+		min-height: 300px;
+	}
 }
 footer {
 	margin-top: 19px;
