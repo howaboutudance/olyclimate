@@ -1,0 +1,2 @@
+class GoogleContactsController < ApplicationController
+end
