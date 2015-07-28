@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'mailgun'
 #google
 gem 'google-api-client', '~> 0.8.6'
+gem 'omniauth-google-oauth2'
 
 #testing
 group :development, :test do
