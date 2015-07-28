@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 	delete 'logout' => 'sessions#destroy'
 	
 	#oauth2
-	get 'oauth2callback', to: 'sessions#create'
-	get 'oauthfailure' , to: redirect('login')
+	get 'auth/:provider/oauth2callback', to: 'sessions#create'
+	get 'auth/failure' , to: redirect('login')
 
 
   # resources
