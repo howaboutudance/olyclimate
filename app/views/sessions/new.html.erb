@@ -3,9 +3,9 @@
 <h1 class="page-header">Login</h1>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<% if @current_user %>
+		<% if current_user %>
 			<p>signed in as <span class="login_name"><%= current_user.name %></span></p>
-			<%= link_to "sign_out", signout_path, id: "sign_out" %>
+			<%= link_to "Logout", logout_path, id: "logout" %>
 		<% else %>
 			<%= link_to "Sign in with Google", "/auth/google_oauth2", id: 'sign_in' %>
 		<% end %>
