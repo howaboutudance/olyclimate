@@ -5,6 +5,12 @@
 body {
 	padding-top: 60px
 }
+footer {
+	margin-top: 19px;
+	.container {
+		border-top: 1px #eee solid;
+	}
+}
 section {
 	overflow:auto;
 }
