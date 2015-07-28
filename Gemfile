@@ -15,7 +15,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #mailgun
 gem 'mailgun'
-
+#google
+gem 'gdata'
+gem 'google-api-client', '~> 0.8.6'
 #testing
 group :development, :test do
   gem 'sqlite3'
