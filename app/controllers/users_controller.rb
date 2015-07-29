@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 			if @user.alerts
 				UserMailer.subscribe(@user, ALERTS_ADDRESS).deliver
 			end
+			flash[:success] = "Thanks for Signing Up"
 			redirect_to root_url
 		else
 			render 'static_pages/error'

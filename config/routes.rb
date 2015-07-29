@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 	#oauth2
 	get 'auth/:provider/callback', to: 'sessions#create'
 	get 'auth/failure' , to: redirect('login')
+	
+	#contact list
+	get 'admin/list' => 'google_contacts#list'
+	get 'admin' => 'google_contacts#list'
 
 
   # resources
