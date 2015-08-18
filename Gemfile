@@ -39,7 +39,7 @@ gem 'ansi', '~> 1.5.0'
 # $ rhc env set BUNDLE_WITHOUT="development test"
 
 group :production, :postgresql do
-  gem 'pg'
+ gem 'pg'
 end
 
 ### / OpenShift changes
