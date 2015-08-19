@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* colors */
+
+$navbar-color: #1D4C70;
+
 /* universal */
 body {
 	padding-top: 60px;
@@ -33,7 +37,23 @@ textarea {
 .top_header h1 {
 	margin-bottom: 10px;
 }
-
+/* have close match to header of primary site */
+.top_header {
+	font-family:calluna-1, calluna-2, serif;
+	color: #275c85;
+}
+.navbar-nav .nav > li > a {
+	color: #1D4C70 !important;
+}
+.navbar {
+	background-color: white;
+	border-color: white;
+	.container {
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-color: rgb(68, 68, 68);
+	}
+}
 /* forms */
 
 input[type="email"], input[type="text"], input[type="password"], textarea, select, .uneditable-input {
