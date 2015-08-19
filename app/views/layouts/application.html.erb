@@ -10,6 +10,8 @@
 	<%= render "layouts/header" %>
 	<article class="container">
 		<%= render 'shared/error_messages' %>
+		<h1 class="page-header"><%= yield(:title) %></h1>
+
 		<%= yield %>
 	</article>
 	<footer>
