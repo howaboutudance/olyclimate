@@ -1,0 +1,14 @@
+<% provide(:title, 'Subscribe') %>
+
+<h1 class="page-header">Unsubscribe</h1>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= render 'shared/error_messages' %>
+		<%= form_for(@user) do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control'%> <br />
+			<%= f.submit "Unsubscribe from All", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div> 

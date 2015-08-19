@@ -12,4 +12,6 @@ class UserMailer < ApplicationMailer
 
     mail from: @user.email, to: to_address, subject: 'Subscribe', text: ""
   end
+	def unsubscribe(user, to_address)
+	end
 end

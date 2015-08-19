@@ -58,4 +58,11 @@ class UserTest < ActiveSupport::TestCase
 		@user.save
 		assert_equal mixed_case_email.downcase, @user.reload.email
 	end
+	test "destroy work correctly" do
+		# remove 1 from user1@example.com to test to make sure fails
+		@user.save
+		@retrieved_user = User.find_by email: "user1@example.com"
+		@retrieved_user.destroy
+		assert_nil User.find_by email: "user1@example.com"
+	end
 end
